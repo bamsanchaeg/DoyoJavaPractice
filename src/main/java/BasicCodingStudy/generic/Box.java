@@ -1,7 +1,7 @@
 package BasicCodingStudy.generic;
 
 //객체를 보관할 수 있다
-public class Box<T> {
+class Box<T> {
 
     private T value;
 
@@ -12,6 +12,8 @@ public class Box<T> {
     public T get() {
         return value;
     }
+
+    // static T staticMethod1(T t) {} //제네릭 타입의 T 사용 불가능
 
 
 }
