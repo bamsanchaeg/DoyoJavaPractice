@@ -1,4 +1,4 @@
-package BasicCodingStudy.collections;
+package BasicCodingStudy.collections.link;
 
 public class MyLinkedListV2Main {
 

@@ -1,4 +1,4 @@
-package BasicCodingStudy.collections;
+package BasicCodingStudy.collections.link;
 
 public class NodeMain2 {
 

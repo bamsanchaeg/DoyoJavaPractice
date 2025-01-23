@@ -1,24 +1,24 @@
-package BasicCodingStudy.collections;
+package BasicCodingStudy.collections.link;
 
-public class MyLinkedListV3<E> {
 
-    //E가 결정되면 다 결정됨
-    private Node<E> first;
+public class MyLinkedListV2 {
+
+    private Node first;
     private int size = 0;
 
     public void add(Object e) {
-        Node<E> newNode = new Node(e);
+        Node newNode = new Node(e);
         if (first == null) {
             first = newNode;
         } else {
-            Node<E> lastNode = getLastNode();
+            Node lastNode = getLastNode();
             lastNode.next = newNode;
         }
         size++;
     }
 
-    private Node<E> getLastNode() {
-        Node<E> x = first;
+    private Node getLastNode() {
+        Node x = first;
         while (x.next != null) {
             x = x.next;
         }
@@ -26,29 +26,29 @@ public class MyLinkedListV3<E> {
     }
 
     //추가 코드
-    public void add(int index, E e) {
-        Node<E> newNode = new Node(e);
+    public void add(int index, Object e) {
+        Node newNode = new Node(e);
         if (index == 0) {
             newNode.next = first;
             first = newNode;
         } else {
-            Node<E> prev = getNode(index - 1);
+            Node prev = getNode(index - 1);
             newNode.next = prev.next;
             prev.next = newNode;
         }
         size++;
     }
 
-    public Object set(int index, E element) {
+    public Object set(int index, Object element) {
         Node x = getNode(index);
         Object oldValue = x.item;
         x.item = element;
         return oldValue;
     }
 
-    public E remove(int index) {
-        Node<E> removeNode = getNode(index);
-        E removedItem = removeNode.item;
+    public Object remove(int index) {
+        Node removeNode = getNode(index);
+        Object removedItem = removeNode.item;
         if (index == 0) {
             first = removeNode.next;
         } else {
@@ -62,22 +62,22 @@ public class MyLinkedListV3<E> {
         return removedItem;
     }
 
-    public E get(int index) {
-        Node<E> node = getNode(index);
+    public Object get(int index) {
+        Node node = getNode(index);
         return node.item;
     }
 
-    private Node<E> getNode(int index) {
-        Node<E> x = first;
+    private Node getNode(int index) {
+        Node x = first;
         for (int i = 0; i < index; i++) {
             x = x.next;
         }
         return x;
     }
 
-    public int indexOf(E o) {
+    public int indexOf(Object o) {
         int index = 0;
-        for (Node<E> x = first; x != null; x = x.next) {
+        for (Node x = first; x != null; x = x.next) {
             if (o.equals(x.item)) {
                 return index;
             }
@@ -99,12 +99,9 @@ public class MyLinkedListV3<E> {
     }
 
     //유형이 다양한 제네릭으로 사용하겠다. 내부 중첩 클래스이다.
-    //중첩 클래스는 특정 클래스 안에서만 사용될 때 주로 사용한다.
-    //Node 클래스는 해당 클래스 안에서만 사용되고 외부에서는 사용할 이유가 없다.
-    //중첩클래스를 사용하면 내부 클래스를 우선 사용한다.
     private static class Node<E> {
         E item;
-        Node<E> next;
+        Node next;
 
         public Node(E item) {
             this.item = item;
@@ -128,4 +125,5 @@ public class MyLinkedListV3<E> {
             return sb.toString();  // 완성된 문자열을 반환
         }
     }
+
 }

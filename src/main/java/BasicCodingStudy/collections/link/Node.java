@@ -1,4 +1,4 @@
-package BasicCodingStudy.collections;
+package BasicCodingStudy.collections.link;
 
 //Objects는 Java의 표준 라이브러리 클래스 (java.util.Objects)인데,
 //이 타입은 객체 타입을 나타내는 것이 아니라 null 체크 등의 유틸리티 메서드를 제공하는 클래스입니다
